@@ -1,0 +1,36 @@
+<%- include("partials/header.ejs") %>
+
+  <main>
+
+    <section class="py-5 container">
+      <div class="row py-lg-5">
+        <div class="col-lg-7 col-md-12 mx-auto">
+          <!-- <img class="pb-4 rounded-top" src="images/post-header-wide-img-2.jpg" width="100%"> -->
+          <h1 class="card-title mb-1">Edit Your Blog Post</h1>
+          <h5 class="card-subtitle mb-2 text-body-secondary">Update the fields below to save your changes.</h5>
+          <small class="text-body-secondary fst-italic">* All fields required</small>
+
+          <form class="mt-4" action="/resubmit" method="POST">
+            <div class="mb-3">
+              <label for="blogTitle" class="form-label">Title</label>
+              <input type="text" class="form-control" id="blogTitle" name="btitle" aria-describedby="emailHelp" value="<%= BlogContent[PostID].title %>" required>
+            </div>
+            <div class="mb-3">
+              <label for="blogAuthor" class="form-label">Author Name</label>
+              <input type="text" class="form-control" id="blogAuthor" name="bauthor" value="<%= BlogContent[PostID].author %>" required>
+            </div>
+            <div class="mb-3">
+              <label for="blogContent" class="form-label">Blog Content</label>
+              <textarea type="text" class="form-control" id="blogContent" name="bcontent" rows="10" required><%= BlogContent[PostID].content %></textarea>
+              <input type="hidden" name="postid" value="<%= PostID %>">
+            </div>
+            <a href="/" type="button" class="btn btn-outline-secondary me-2">Cancel</a>
+            <button type="submit" class="btn btn-primary" id="actionButton" value="OK">Save Changes</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  
+  </main>
+
+  <%- include("partials/footer.ejs") %>

@@ -1,0 +1,35 @@
+<%- include("partials/header.ejs") %>
+
+  <main>
+
+    <section class="py-5 container">
+      <div class="row py-lg-5">
+        <div class="col-lg-7 col-md-12 mx-auto">
+          <!-- <img class="pb-4 rounded-top" src="images/post-header-wide-img-2.jpg" width="100%"> -->
+          <h1 class="card-title mb-1">Create New Blog Post</h1>
+          <h5 class="card-subtitle mb-2 text-body-secondary">Fill in the fields below to create a post.</h5>
+          <small class="text-body-secondary fst-italic">* All fields required</small>
+
+          <form class="mt-4" action="/submit" method="POST">
+            <div class="mb-3">
+              <label for="blogTitle" class="form-label">Title</label>
+              <input type="text" class="form-control" id="blogTitle" name="btitle" aria-describedby="emailHelp" required>
+            </div>
+            <div class="mb-3">
+              <label for="blogAuthor" class="form-label">Author Name</label>
+              <input type="text" class="form-control" id="blogAuthor" name="bauthor" required>
+            </div>
+            <div class="mb-3">
+              <label for="blogContent" class="form-label">Blog Content</label>
+              <textarea class="form-control" id="blogContent" name="bcontent" rows="10" required></textarea>
+            </div>
+            <a href="/" type="button" class="btn btn-outline-secondary me-2">Cancel</a>
+            <button type="submit" class="btn btn-primary" id="actionButton" value="OK">Submit</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  
+  </main>
+
+  <%- include("partials/footer.ejs") %>
